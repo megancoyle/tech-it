@@ -23,18 +23,18 @@
             <a href="#"><h1 id="logo">techit</h1></a>
             <nav>
               <ul>
-                <li class="dropdown-button" id="initial-value"><a href="#">subreddit: <span>select one</span></a>
-                  <ul class="dropdown-menu">
-                      <li value="javascript"><a href="#">JavaScript</a></li>
-                      <li value="css"><a href="#">CSS</a></li>
-                      <li value="programming"><a href="#">Programming</a></li>
-                      <li value="ruby"><a href="#">Ruby</a></li>
-                      <li value="learnprogramming"><a href="#">Learn Programming</a></li>
-                      <li value="webdesign"><a href="#">Web Design</a></li>
-                  </ul>
-                </li>
-              </ul>
-              
+              <form class="form-inline">
+                  <select id="which-reddit" class="form-control form-control-lg">
+                    <option selected="selected" id="what" disabled>subreddit: select one</option>
+                    <option id="javascript" value="JavaScript">JavaScript</option>
+                    <option id="css" value="css">CSS</option>
+                    <option id="programming" value="programming">Programming</option>
+                    <option id="ruby" value="ruby">Ruby</option>
+                    <option id="learnprogramming" value="learnprogramming">Learn Programming</option>
+                    <option id="webdesign" value="webdesign">Web Design</option>
+                  </select>
+                </fieldset>
+              </form>
               <section id="search">
                 <input id="search-box" type="text" name="name" value="">
                 <a href="#"><img src="images/search.png" alt="" /></a>
@@ -43,15 +43,8 @@
             <div class="clearfix"></div>
           </section>
         </header>
-        <div id="popUp" class="loader hidden">
-          <a href="#" class="closePopUp">X</a>
-          <div class="container">
-            <h1>Article title here</h1>
-            <p>
-              Article description/content here.
-            </p>
-            <a href="#" class="popUpAction" target="_blank">Read more from source</a>
-          </div>
+        <div id="landing-page-container">
+        <h3 class="landing-page">find all you ever wanted to know about tech</h3>
         </div>
         <section id="main" class="container">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

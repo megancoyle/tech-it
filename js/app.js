@@ -3,6 +3,9 @@
 var $article = $("article");
 var $mainContent = $("#main");
 var $logo = $("#logo");
+var $whichReddit = $("#which-reddit");
+
+var $landingPageContainer = $("#landing-page-container");
 
 //Nav and search variables
 var $dropdownButton = $(".dropdown-button");
@@ -26,31 +29,26 @@ var $popUpLink = $(".popUpAction");
 var source = $("#article-template").html();
 var template = Handlebars.compile(source);
 
-//Main view
-$(document).ready(function(){
-  searchAll();
-})
-
 //On click of logo, show main view
 $logo.click(function(){
-  searchAll();
+  location.reload();
 })
 
-function searchAll(){
-  $popUp.removeClass("hidden");
-  searchReddit();
-  // searchDigg();
-  // searchMashable();
-}
+// function searchAll(){
+//   $popUp.removeClass("hidden");
+//   searchReddit();
+//   // searchDigg();
+//   // searchMashable();
+// }
 
 //Search functionality
 $searchButton.click(function () {
   $search.toggleClass("active");
 })
 
-$dropdownButton.hover(function () {
-  $dropdownMenu.addClass("open");
-});
+// $dropdownButton.hover(function () {
+//   $dropdownMenu.addClass("open");
+// });
 
 // $dropdownButton.click(function(){
 //   switch ($initialValue.text()) {
@@ -67,13 +65,13 @@ $dropdownButton.hover(function () {
 // })
 
 // Keep track of what slection is made
-// $selectThingsToDo.change(function(){
-//   var searchTerm = $(this).find('option:selected').attr('value');
-//   searchReddit(searchTerm);
-//   // Change heading text on selection
-//   var selectedText = $(this).find('option:selected').text();
-//   $landingPageContainer.html("<h2 class='landing-page'>" + selectedText + "</h2>");
-// });
+$whichReddit.change(function(){
+  var searchTerm = $(this).find('option:selected').attr('value');
+  searchReddit(searchTerm);
+  // Change heading text on selection
+  // var selectedText = $(this).find('option:selected').text();
+  // $landingPageContainer.html("<h2 class='landing-page'>" + selectedText + "</h2>");
+});
 
 function Article(options) {
   this.title = options.title;
@@ -97,10 +95,10 @@ $redditValue.click(function() {
 // https://www.reddit.com/r/web_design.json
 
 // REDDIT Search
-function searchReddit(searchTerm) {
+function searchReddit(queryTerm) {
   $popUp.removeClass("hidden");
   $mainContent.empty();
-  var url = 'https://www.reddit.com/r/ruby.json';
+  var url = 'https://www.reddit.com/r/' + queryTerm + '.json';
   $.ajax({
     url: url,
     success: function(response){

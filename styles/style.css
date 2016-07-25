@@ -3,7 +3,22 @@
   max-width: 1000px;
   margin: 0 auto;
 }
+body {
+  background-image: url('../images/tech.jpg');
+  background-size: 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
 
+h3.landing-page {
+    font-size: 3em;
+    color: #808080;
+    font-weight: bold;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 15%;
+    text-align: center;
+}
 
 /* Header styles */
 header {

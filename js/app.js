@@ -69,8 +69,8 @@ $whichReddit.change(function(){
   var searchTerm = $(this).find('option:selected').attr('value');
   searchReddit(searchTerm);
   // Change heading text on selection
-  // var selectedText = $(this).find('option:selected').text();
-  // $landingPageContainer.html("<h2 class='landing-page'>" + selectedText + "</h2>");
+  var selectedText = $(this).find('option:selected').text();
+  $landingPageContainer.html("<h2 class='landing-page'>" + selectedText + "</h2>");
 });
 
 function Article(options) {
@@ -81,14 +81,6 @@ function Article(options) {
   this.link = options.link;
   this.description = options.description;
 }
-
-// subreddit apis
-// https://www.reddit.com/r/javascript.json
-// https://www.reddit.com/r/css.json
-// https://www.reddit.com/r/programming.json
-// https://www.reddit.com/r/ruby.json
-// https://www.reddit.com/r/learnprogramming.json
-// https://www.reddit.com/r/web_design.json
 
 // REDDIT Search
 function searchReddit(queryTerm) {
@@ -110,9 +102,6 @@ function searchReddit(queryTerm) {
           });
           $mainContent.append(template(article));
         }
-        // On click of article title, display pop-up
-        var $title = $(".article .articleContent h3");
-        $title.click(changePopUp);
     },
     error: function () {
       alert("Can't load because of error.");
@@ -120,26 +109,6 @@ function searchReddit(queryTerm) {
   })
 }
 
-
-// Populate popup with article info
-function changePopUp (e) {
-  e.preventDefault();
-  var $clickedTitle = $(e.target);
-  var $selectedArticle = $clickedTitle.closest('.article');
-  var titleText = $selectedArticle.find('.title').text();
-  var contentText = $selectedArticle.find('.content').text();
-  var storyLink = $selectedArticle.find('.story-link').attr("href");
-  $popUpTitle.html(titleText);
-  $popUpContent.html(contentText);
-  $popUpLink.attr("href", storyLink);
-  $popUp.removeClass("loader hidden");
-}
-
-// Close popup
-$closePopUp.click(function(e) {
-  e.preventDefault();
-  $popUp.addClass("loader hidden");
-})
 
 //Search filter
 $searchBox.keyup(function () {

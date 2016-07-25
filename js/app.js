@@ -82,10 +82,6 @@ function Article(options) {
   this.description = options.description;
 }
 
-$redditValue.click(function() {
-  $dropdownMenu.removeClass("open");
-  $initialValue.text("Reddit");
-})
 // subreddit apis
 // https://www.reddit.com/r/javascript.json
 // https://www.reddit.com/r/css.json
@@ -96,7 +92,6 @@ $redditValue.click(function() {
 
 // REDDIT Search
 function searchReddit(queryTerm) {
-  $popUp.removeClass("hidden");
   $mainContent.empty();
   var url = 'https://www.reddit.com/r/' + queryTerm + '.json';
   $.ajax({

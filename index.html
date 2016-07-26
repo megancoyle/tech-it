@@ -22,7 +22,6 @@
           <section class="container">
             <a href="#"><h1 id="logo">techit</h1></a>
             <nav>
-              <ul>
               <form class="form-inline">
                   <select id="which-reddit" class="form-control form-control-lg">
                     <option selected="selected" id="what" disabled>subreddit: select one</option>
@@ -53,10 +52,10 @@
         <script src="js/handlebars-v4.0.5.js"></script>
         <script id="article-template" type="text/x-handlebars-template">
           <article class="article">
-            <section class="featuredImage">
+            <section class="featured-image">
               <img src="{{image}}" alt="" />
             </section>
-            <section class="articleContent">
+            <section class="article-content">
                 <a class="story-link" href="{{link}}" target="_blank"><h3 class="title">{{title}}</h3></a>
                 <p class="content">{{description}}</p>
                 <h6>{{tag}}</h6>

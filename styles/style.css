@@ -160,6 +160,8 @@ nav ul ul li {
   background-color: white;
   opacity: .8;
   padding-right: 15px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .article:hover {

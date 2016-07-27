@@ -1,29 +1,13 @@
 /* tech it js */
-
-var $article = $("article");
 var $mainContent = $("#main");
 var $logo = $("#logo");
 var $whichReddit = $("#which-reddit");
-
 var $landingPageContainer = $("#landing-page-container");
 
 //Nav and search variables
-var $dropdownButton = $(".dropdown-button");
-var $dropdownMenu = $(".dropdown-menu");
-var $nav = $("nav");
-var $navItems = $("nav ul ul li");
 var $searchButton = $("#search a");
 var $search = $("#search");
 var $searchBox = $("#search-box");
-var $redditValue = $("#reddit");
-var $initialValue = $("#initial-value span");
-
-//PopUp variables
-var $popUp = $("#popUp");
-var $closePopUp = $(".closePopUp");
-var $popUpTitle = $("#popUp h1");
-var $popUpContent = $("#popUp p");
-var $popUpLink = $(".popUpAction");
 
 //Handlebars Template variables
 var source = $("#article-template").html();
@@ -34,35 +18,10 @@ $logo.click(function(){
   location.reload();
 })
 
-// function searchAll(){
-//   $popUp.removeClass("hidden");
-//   searchReddit();
-//   // searchDigg();
-//   // searchMashable();
-// }
-
 //Search functionality
 $searchButton.click(function () {
   $search.toggleClass("active");
 })
-
-// $dropdownButton.hover(function () {
-//   $dropdownMenu.addClass("open");
-// });
-
-// $dropdownButton.click(function(){
-//   switch ($initialValue.text()) {
-//     case 'Reddit':
-//       searchReddit();
-//       break;
-//     case 'Digg':
-//       searchDigg();
-//       break;
-//     case 'Mashable':
-//       searchMashable();
-//       break;
-//   }
-// })
 
 // Keep track of what slection is made
 $whichReddit.change(function(){
@@ -89,7 +48,6 @@ function searchReddit(queryTerm) {
   $.ajax({
     url: url,
     success: function(response){
-        $popUp.addClass("hidden");
         var articleData = response.data.children
         for (i = 0; i < articleData.length; i++) {
           var article = new Article({
@@ -109,7 +67,6 @@ function searchReddit(queryTerm) {
   })
 }
 
-
 //Search filter
 $searchBox.keyup(function () {
     var valThis = this.value.toLowerCase(),
@@ -120,10 +77,12 @@ $searchBox.keyup(function () {
             textL = text.toLowerCase(),
             htmlR = text.substr(0, valLength) + text.substr(valLength);
             if (textL.indexOf(valThis) == 0) {
-              $(this).html(htmlR).show()
-            } else {$(this).parent().parent().parent().hide();}
+              $(this).html(htmlR).show();
+            } else {
+              $(this).closest("article").hide();
+            }
             if (valThis === ""){
-              $(this).parent().parent().parent().show();
+              $(this).closest("article").show();
             }
     })
 })

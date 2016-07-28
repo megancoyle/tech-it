@@ -3,6 +3,7 @@ var $mainContent = $("#main");
 var $logo = $("#logo");
 var $whichReddit = $("#which-reddit");
 var $landingPageContainer = $("#landing-page-container");
+var placeholderImages = ["images/placeholder/lego.jpg", "images/placeholder/mac.jpg", "images/placeholder/more-typing.jpg", "images/placeholder/typing.jpg"];
 
 //Nav and search variables
 var $searchButton = $("#search a");
@@ -12,7 +13,6 @@ var $searchBox = $("#search-box");
 //Handlebars Template variables
 var source = $("#article-template").html();
 var template = Handlebars.compile(source);
-var placeholderImages = ["images/placeholder/lego.jpg", "images/placeholder/mac.jpg", "images/placeholder/more-typing.jpg", "images/placeholder/typing.jpg"];
 
 function sample(array) {
   return array[Math.floor ( Math.random() * array.length )]

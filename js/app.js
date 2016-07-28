@@ -12,22 +12,10 @@ var $searchBox = $("#search-box");
 //Handlebars Template variables
 var source = $("#article-template").html();
 var template = Handlebars.compile(source);
-var placeholderImage = ["images/placeholder/lego.jpg", "images/placeholder/mac.jpg", "images/placeholder/more-typing.jpg", "images/placeholder/typing.jpg"];
-var shuffledImages = shuffle(placeholderImage);
+var placeholderImages = ["images/placeholder/lego.jpg", "images/placeholder/mac.jpg", "images/placeholder/more-typing.jpg", "images/placeholder/typing.jpg"];
 
-function shuffle(array) {
-  var currentIndex = array.length, temporaryValue, randomIndex;
-  // While there remain elements to shuffle...
-  while (0 !== currentIndex) {
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-    // And swap it with the current element.
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
-  return array;
+function sample(array) {
+  return array[Math.floor ( Math.random() * array.length )]
 }
 
 //On click of logo, show main view
@@ -76,8 +64,8 @@ function searchReddit(queryTerm) {
             link: articleData[i].data.url,
             description: " "
           });
-          if (article.image == "self" || article.image == "" || article.image == "default") {
-            article.image = shuffledImages.pop();
+          if (article.image == "self" || article.image == "default" || article.image == "") {
+            article.image = sample(placeholderImages);
           }
           $mainContent.append(template(article));
         }

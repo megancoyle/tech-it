@@ -32,6 +32,7 @@ $whichReddit.change(function(){
   $landingPageContainer.html("<h2 class='landing-page'>" + selectedText + "</h2>");
 });
 
+// constructor for populating reddit search results
 function Article(options) {
   this.title = options.title;
   this.impressions = options.impressions;

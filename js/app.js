@@ -80,7 +80,6 @@ function searchReddit(queryTerm) {
 $searchBox.keyup(function () {
     var valThis = this.value.toLowerCase(),
         valLength  = this.value.length;
-
     $("#main>article h3").each(function () {
         var text  = $(this).text(),
             textL = text.toLowerCase(),

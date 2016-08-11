@@ -22,6 +22,18 @@ h3.landing-page {
     text-align: center;
     font-family: 'Reenie Beanie', cursive;
     line-height: 1;
+    text-align: center;
+}
+
+h3.error {
+  color: #ff0066;
+  font-family: 'Reenie Beanie', cursive;
+  margin: 0 auto;
+  margin-top: 20%;
+  max-width: 600px;
+  font-size: 3.8em;
+  line-height: .8;
+  text-align: center;
 }
 
 /* Header styles */
@@ -52,6 +64,13 @@ header nav {
   margin-top: 0;
   position: relative;
   vertical-align: middle;
+}
+
+select#which-reddit {
+    border: 1px solid white;
+    height: 30px;
+    color: gray;
+    font-size: .9em;
 }
 
 /* Search bar */

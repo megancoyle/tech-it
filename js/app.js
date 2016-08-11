@@ -71,7 +71,7 @@ function searchReddit(queryTerm) {
         }
     },
     error: function () {
-      alert("Can't load because of error.");
+      $landingPageContainer.html("<h3 class='landing-page'>Oh nos! Couldn't load because of an error.</h3>");
     }
   })
 }

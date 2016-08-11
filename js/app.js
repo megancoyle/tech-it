@@ -3,7 +3,7 @@ var $mainContent = $("#main");
 var $logo = $("#logo");
 var $whichReddit = $("#which-reddit");
 var $landingPageContainer = $("#landing-page-container");
-var placeholderImages = ["images/placeholder/lego.jpg", "images/placeholder/mac.jpg", "images/placeholder/more-typing.jpg", "images/placeholder/typing.jpg"];
+var placeholderImages = ["images/placeholder/chess.jpg", "images/placeholder/ducky.jpg", "images/placeholder/hand-with-watch.jpg", "images/placeholder/headphones-2.jpg", "images/placeholder/headphones-3.jpg", "images/placeholder/headphones.jpg", "images/placeholder/iphone.jpg", "images/placeholder/keyboard-phone.jpg", "images/placeholder/lego.jpg", "images/placeholder/mac.jpg", "images/placeholder/mobile-devices.jpg", "images/placeholder/more-typing.jpg", "images/placeholder/phone-2.jpg", "images/placeholder/phone.jpg", "images/placeholder/typing.jpg", "images/placeholder/watch.jpg"];
 
 //Nav and search variables
 var $searchButton = $("#search a");
